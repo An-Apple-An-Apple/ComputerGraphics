@@ -79,15 +79,19 @@
         } else {
             document.getElementById("flex2").style.display = "flex";
             document.getElementById("dropDownSVGCanvas").style.display = "none";
+
             document.getElementsByClassName("expandedNavBarItems")[0].style.transitionDelay = "0s";
             document.getElementsByClassName("expandedNavBarItems")[1].style.transitionDelay = "0.1s";
             document.getElementsByClassName("expandedNavBarItems")[2].style.transitionDelay = "0.2";
             document.getElementsByClassName("expandedNavBarItems")[3].style.transitionDelay = "0.3";
+
             document.getElementsByClassName("expandedNavBarItems")[0].style.opacity = 0;
             document.getElementsByClassName("expandedNavBarItems")[1].style.opacity = 0;
             document.getElementsByClassName("expandedNavBarItems")[2].style.opacity = 0;
             document.getElementsByClassName("expandedNavBarItems")[3].style.opacity = 0;
+
             document.getElementById("dropDownSVG").setAttribute("d", "M1 1L10 8L19 1");
+
             document.getElementById("navBarBorder").style.height = "60px";
             x = 0;
         }
@@ -99,12 +103,12 @@
         if (x == 0) {
             document.getElementById("dropDownSVG").setAttribute("d", "M1 8L10 1L19 8");
 
-            document.getElementsByClassName("expandedNavBarItems")[0].style.transitionDelay = "0.5s";
-            document.getElementsByClassName("expandedNavBarItems")[1].style.transitionDelay = "0.4s";
-            document.getElementsByClassName("expandedNavBarItems")[2].style.transitionDelay = "0.3s";
-            document.getElementsByClassName("expandedNavBarItems")[3].style.transitionDelay = "0.2s";
+            document.getElementsByClassName("expandedNavBarItems")[0].style.transitionDelay = "0.7s";
+            document.getElementsByClassName("expandedNavBarItems")[1].style.transitionDelay = "0.6s";
+            document.getElementsByClassName("expandedNavBarItems")[2].style.transitionDelay = "0.5s";
+            document.getElementsByClassName("expandedNavBarItems")[3].style.transitionDelay = "0.4s";
 
-            document.getElementById("navBarBorder").style.height = "220px";
+            document.getElementById("navBarBorder").style.height = "250px";
 
             document.getElementById("navBarBorder").style.transitionDelay = "0s";
 
@@ -136,10 +140,10 @@
             document.getElementsByClassName("expandedNavBarItems")[2].style.opacity = 0;
             document.getElementsByClassName("expandedNavBarItems")[3].style.opacity = 0;
 
-            document.getElementsByClassName("expandedNavBarItems")[0].style.transform = "translateY(-15px)";
-            document.getElementsByClassName("expandedNavBarItems")[1].style.transform = "translateY(-15px)";
-            document.getElementsByClassName("expandedNavBarItems")[2].style.transform = "translateY(-15px)";
-            document.getElementsByClassName("expandedNavBarItems")[3].style.transform = "translateY(-15px)";
+            document.getElementsByClassName("expandedNavBarItems")[0].style.transform = "translateY(-30px)";
+            document.getElementsByClassName("expandedNavBarItems")[2].style.transform = "translateY(-30px)";
+            document.getElementsByClassName("expandedNavBarItems")[3].style.transform = "translateY(-30px)";
+            document.getElementsByClassName("expandedNavBarItems")[1].style.transform = "translateY(-30px)";
 
             x -= 1;
         }
