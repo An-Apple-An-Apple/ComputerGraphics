@@ -6,48 +6,44 @@
     background-color: rgba(249, 249, 249);
 }
 /* ↓ Nav Bar ↓ ----------------------------------------------------------------------------------*/
-#navBarBorder {
+#navBar {
     position: fixed;
-
+    
     width: 100%;
     height: 60px;
+    
+    background-color: rgba(255, 255, 255, 0.7);
+    
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 
-
-    border-bottom: 1px solid rgb(218, 218, 218);
-    transition: all 0.5s ease;
+        transition: all 0.5s ease;
 }
-#navBar {
+#navTop {
     display: flex;
     align-items: center;
     justify-content: center;
 
-    width: 100%;
     height: 60px;
-
-    background-color: rgba(249, 249, 249, 0.2);
-
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
 }
 .navFlex {
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-#flex1 {
-    width: 100%;
+    
+        width: 100%;
     max-width: 1000px;
-
+    
     margin-left: 20px;
     margin-right: 20px;
 }
-#webLogoFont {
+.webLogoFont {
     min-width: 206px;
     font-family: "TTYFONT", 'Roboto', sans-serif;
     font-style: bolder;
     font-weight:500;
     font-size: 18px;
-
+    
     color: rgb(0, 0, 0);
 }
 #flex2 {
@@ -62,35 +58,33 @@
     
     color: rgba(84, 84, 84, 1);
 }
-#expandedNavBarCon {
+#dropDownButton {
+    height: 30px;
+    width: 30px;
+
+    background-color: none;
+
     display: flex;
     align-items: center;
-    justify-content: center;
-    
-    width: 100%;
-    height: 140px;
-    
-    background-color: rgba(249, 249, 249, 0);
+    justify-content: space-between;
 
 }
-#expandedNavBarConFlex {
+#expandedNavBarCon {
     width: 100%;
-    max-width: 990px;
-
-    margin-left: 30px;
-    margin-right: 20px;
-
-
+    height: 140px;
+    margin-left: 50px;
 }
 .expandedNavBarItems {
     opacity: 0;
+    visibility: hidden;
     transform: translateY(-30px);
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s linear ;
     font-family: 'Roboto', sans-serif;
-    margin: 20px;
+    margin-bottom: 20px;
     font-weight: 200;
     font-size: 14px;
     color: rgba(84, 84, 84, 1);
+    width: 200px;
 }
 /* ↑ Nav Bar ↑ ----------------------------------------------------------------------------------*/
 
@@ -115,5 +109,22 @@
     font-size: 12px;
     
     color: rgba(84, 84, 84, 1);
+}
+.versionData2 {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 300px;
+    margin-bottom: 10px;
+
+    font-family: "TTYFONT", 'Roboto', sans-serif;
+    font-style: bolder;
+    font-weight:700;
+    font-size: 40px;
+    
+    color: rgb(0, 0, 0);
 }
 /* ↑ Version Data ↑ -----------------------------------------------------------------------------*/

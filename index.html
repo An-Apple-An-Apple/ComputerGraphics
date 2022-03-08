@@ -13,10 +13,10 @@
 </head>
 
 <body id="body">
-    <div id="navBarBorder">
-        <div id="navBar">
-            <div class="navFlex" id="flex1">
-                <div id="webLogoFont">Computer Graphics</div>
+    <div id="navBar">
+        <div id="navTop">
+            <div class="navFlex">
+                <div class="webLogoFont">Computer Graphics</div>
                 <div class="navFlex" id="flex2">
                     <div id="flex2Font">
                         Simulation
@@ -31,33 +31,38 @@
                         References
                     </div>
                 </div>
-                <svg width="20" height="9" viewBox="0 0 20 9" fill="none" xmlns="http://www.w3.org/2000/svg"
-                    onclick="dropdown()" id="dropDownSVGCanvas">
-                    <path d="M1 1L10 8L19 1" stroke="black" id="dropDownSVG" />
-                </svg>
+                <div id="dropDownButton" onclick="dropdown()">
+                    <svg width="20" height="9" viewBox="0 0 20 9" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        onclick="" id="dropDownSVGCanvas">
+                        <path d="M1 1L10 8L19 1" stroke="black" id="dropDownSVG" />
+                    </svg>
+                </div>
             </div>
         </div>
         <div id="expandedNavBarCon">
-            <div id="expandedNavBarConFlex">
-                <div class="expandedNavBarItems">
-                    Simulation
-                </div>
-                <div class="expandedNavBarItems">
-                    Artificial Intelligence
-                </div>
-                <div class="expandedNavBarItems">
-                    Artificial Intelligence
-                </div>
-                <div class="expandedNavBarItems">
-                    Design
-                </div>
+            <div class="expandedNavBarItems">
+                Simulation
+            </div>
+            <div class="expandedNavBarItems">
+                Artificial Intelligence
+            </div>
+            <div class="expandedNavBarItems">
+                Design
+            </div>
+            <div class="expandedNavBarItems">
+                Reference
             </div>
         </div>
     </div>
     <div class="placeHolder">
     </div>
+    <div class="versionData2">
+        Computer Graphic
+    </div>
+    <div class="placeHolder">
+    </div>
     <div class="versionData">
-        Version 3.61 - Last updated on Monday March 7, 2022
+        Version 3.62 - Last updated on Tuesday March 8, 2022 at 5:36 PM
     </div>
 </body>
 
@@ -68,10 +73,10 @@
     function disappear() {
         if (w <= 800) {
             document.getElementById("flex2").style.display = "none";
-            document.getElementById("dropDownSVGCanvas").style.display = "flex";
+            document.getElementById("dropDownButton").style.display = "flex";
         } else {
             document.getElementById("flex2").style.display = "flex";
-            document.getElementById("dropDownSVGCanvas").style.display = "none";
+            document.getElementById("dropDownButton").style.display = "none";
         }
     }
     disappear();
@@ -80,24 +85,35 @@
     window.addEventListener("resize", function () {
         var w = window.innerWidth; if (w <= 800) {
             document.getElementById("flex2").style.display = "none";
-            document.getElementById("dropDownSVGCanvas").style.display = "flex";
+            document.getElementById("dropDownButton").style.display = "flex";
         } else {
             document.getElementById("flex2").style.display = "flex";
-            document.getElementById("dropDownSVGCanvas").style.display = "none";
+            document.getElementById("dropDownButton").style.display = "none";
+            document.getElementById("dropDownSVG").setAttribute("d", "M1 1L10 8L19 1");
 
             document.getElementsByClassName("expandedNavBarItems")[0].style.transitionDelay = "0s";
             document.getElementsByClassName("expandedNavBarItems")[1].style.transitionDelay = "0.1s";
-            document.getElementsByClassName("expandedNavBarItems")[2].style.transitionDelay = "0.2";
-            document.getElementsByClassName("expandedNavBarItems")[3].style.transitionDelay = "0.3";
+            document.getElementsByClassName("expandedNavBarItems")[2].style.transitionDelay = "0.2s";
+            document.getElementsByClassName("expandedNavBarItems")[3].style.transitionDelay = "0.3s";
+
+            document.getElementById("navBar").style.height = "60px";
+
+            document.getElementById("navBar").style.transitionDelay = "0.6s";
 
             document.getElementsByClassName("expandedNavBarItems")[0].style.opacity = 0;
             document.getElementsByClassName("expandedNavBarItems")[1].style.opacity = 0;
             document.getElementsByClassName("expandedNavBarItems")[2].style.opacity = 0;
             document.getElementsByClassName("expandedNavBarItems")[3].style.opacity = 0;
 
-            document.getElementById("dropDownSVG").setAttribute("d", "M1 1L10 8L19 1");
+            document.getElementsByClassName("expandedNavBarItems")[1].style.visibility = "hidden";
+            document.getElementsByClassName("expandedNavBarItems")[0].style.visibility = "hidden";
+            document.getElementsByClassName("expandedNavBarItems")[2].style.visibility = "hidden";
+            document.getElementsByClassName("expandedNavBarItems")[3].style.visibility = "hidden";
 
-            document.getElementById("navBarBorder").style.height = "60px";
+            document.getElementsByClassName("expandedNavBarItems")[0].style.transform = "translateY(-30px)";
+            document.getElementsByClassName("expandedNavBarItems")[2].style.transform = "translateY(-30px)";
+            document.getElementsByClassName("expandedNavBarItems")[3].style.transform = "translateY(-30px)";
+            document.getElementsByClassName("expandedNavBarItems")[1].style.transform = "translateY(-30px)";
             x = 0;
         }
     });
@@ -113,14 +129,19 @@
             document.getElementsByClassName("expandedNavBarItems")[2].style.transitionDelay = "0.5s";
             document.getElementsByClassName("expandedNavBarItems")[3].style.transitionDelay = "0.4s";
 
-            document.getElementById("navBarBorder").style.height = "220px";
+            document.getElementById("navBar").style.height = "220px";
 
-            document.getElementById("navBarBorder").style.transitionDelay = "0s";
+            document.getElementById("navBar").style.transitionDelay = "0s";
 
             document.getElementsByClassName("expandedNavBarItems")[0].style.opacity = 100;
             document.getElementsByClassName("expandedNavBarItems")[1].style.opacity = 100;
             document.getElementsByClassName("expandedNavBarItems")[2].style.opacity = 100;
             document.getElementsByClassName("expandedNavBarItems")[3].style.opacity = 100;
+
+            document.getElementsByClassName("expandedNavBarItems")[1].style.visibility = "visible";
+            document.getElementsByClassName("expandedNavBarItems")[0].style.visibility = "visible";
+            document.getElementsByClassName("expandedNavBarItems")[2].style.visibility = "visible";
+            document.getElementsByClassName("expandedNavBarItems")[3].style.visibility = "visible";
 
             document.getElementsByClassName("expandedNavBarItems")[0].style.transform = "translateY(0px)";
             document.getElementsByClassName("expandedNavBarItems")[1].style.transform = "translateY(0px)";
@@ -136,14 +157,19 @@
             document.getElementsByClassName("expandedNavBarItems")[2].style.transitionDelay = "0.2s";
             document.getElementsByClassName("expandedNavBarItems")[3].style.transitionDelay = "0.3s";
 
-            document.getElementById("navBarBorder").style.height = "60px";
+            document.getElementById("navBar").style.height = "60px";
 
-            document.getElementById("navBarBorder").style.transitionDelay = "0.6s";
+            document.getElementById("navBar").style.transitionDelay = "0.6s";
 
             document.getElementsByClassName("expandedNavBarItems")[0].style.opacity = 0;
             document.getElementsByClassName("expandedNavBarItems")[1].style.opacity = 0;
             document.getElementsByClassName("expandedNavBarItems")[2].style.opacity = 0;
             document.getElementsByClassName("expandedNavBarItems")[3].style.opacity = 0;
+
+            document.getElementsByClassName("expandedNavBarItems")[1].style.visibility = "hidden";
+            document.getElementsByClassName("expandedNavBarItems")[0].style.visibility = "hidden";
+            document.getElementsByClassName("expandedNavBarItems")[2].style.visibility = "hidden";
+            document.getElementsByClassName("expandedNavBarItems")[3].style.visibility = "hidden";
 
             document.getElementsByClassName("expandedNavBarItems")[0].style.transform = "translateY(-30px)";
             document.getElementsByClassName("expandedNavBarItems")[2].style.transform = "translateY(-30px)";
