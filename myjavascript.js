@@ -15,7 +15,7 @@ disappear();
 function titleSize() {
     let navBar = 60;
     let title = 209;
-    document.getElementsByClassName("title")[0].style.height = window.innerHeight - navBar + "px";
+    document.getElementsByClassName("title")[0].style.height = window.outerHeight - navBar + "px";
 }
 titleSize();
 
