@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mystyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;800;900&display=swap"
+        rel="stylesheet">
+    <title>Gavin's Passion Project</title>
+</head>
+
+<body id="body">
+    <div id="navBar">
+        <div id="navTop">
+            <div class="navFlex">
+                <a href="index.html" class="webLogoFont">Computer Graphics</a>
+                <div class="navFlex" id="flex2">
+                    <a href="simulation.html" class="flex2Font">Simulation</a>
+                    <a href="ai.html" class="flex2Font">Artificial Intelligence</a>
+                    <a href="design.html" class="flex2Font">Design</a>
+                    <a href="reference.html" class="flex2Font">References</a>
+                </div>
+                <div id="dropDownButton" onclick="dropdown_clicked()">
+                    <svg width="20" height="9" viewBox="0 0 20 9" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        onclick="" id="dropDownSVGCanvas">
+                        <path d="M1 1L10 8L19 1" stroke="black" id="dropDownSVG" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div id="expandedNavBarCon">
+            <div class="expandedNavBarItems">
+                Simulation
+            </div>
+            <div class="expandedNavBarItems">
+                Artificial Intelligence
+            </div>
+            <div class="expandedNavBarItems">
+                Design
+            </div>
+            <div class="expandedNavBarItems">
+                Reference
+            </div>
+        </div>
+    </div>
+    <div id="everything">
+    </div>
+    <div class="placeHolder">
+    </div>
+
+    <div class="versionData">
+        Version 3.66 - Last updated on May 8, 2022 at 1:13 AM
+    </div>
+</body>
+
+<script src="myjavascript.js">
+
+</script>
+
+</html>
