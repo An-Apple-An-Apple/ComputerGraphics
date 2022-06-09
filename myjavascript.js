@@ -14,8 +14,7 @@ disappear();
 
 function titleSize() {
     let navBar = 60;
-    let title = 209;
-    document.getElementsByClassName("title")[0].style.height = window.outerHeight - navBar + "px";
+    document.getElementsByClassName("titleFlex")[0].style.height = window.outerHeight + "px";
 }
 titleSize();
 
@@ -97,6 +96,20 @@ function dropdown_clicked() {
     }
 }
 
+function introParaGradient() {
+    a = document.getElementsByClassName("title")[0];
+    // a.style.opacity = a.getBoundingClientRect().top;
+    for (let i = 0; i < 5; i++) {
+        let object = document.getElementsByClassName("introPara")[i];
+        let opac = 1 - Math.abs((object.getBoundingClientRect().top + (object.offsetHeight / 2) - window.outerHeight / 2) / (window.outerHeight / 2));
+        // make the paragraph's opacity 1 near the middle and 0 near the edge
+        // {1 - } makes it the opposites
+        // rest: I dont know why its working properly, its working excatly as I planned so like I don't care
+        object.style.opacity = opac;
+        // object.innerHTML = object.offsetHeight;
+    }
+}
+
 // dropDownIconAppear/Disappear from screen size change
 window.addEventListener("resize", function () {
     var w = window.innerWidth;
@@ -113,19 +126,10 @@ window.addEventListener("resize", function () {
         close_nav_bar();
     }
     titleSize();
+    introParaGradient();
 });
 
 // intro paragraph and title fading by on scroll
 window.addEventListener("scroll", function () {
-    a = document.getElementsByClassName("title")[0];
-    // a.style.opacity = a.getBoundingClientRect().top;
-    for (let i = 0; i < 5; i++) {
-        let object = document.getElementsByClassName("introPara")[i];
-        let opac = 1 - Math.abs((object.getBoundingClientRect().top + (object.offsetHeight / 2) - window.outerHeight / 2) / (window.outerHeight / 2));
-        // make the paragraph's opacity 1 near the middle and 0 near the edge
-        // {1 - } makes it the opposites
-        // rest: I dont know why its working properly, its working excatly as I planned so like I don't care
-        object.style.opacity = opac;
-        // object.innerHTML = object.offsetHeight;
-    }
+    introParaGradient();
 });
