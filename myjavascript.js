@@ -110,6 +110,21 @@ function introParaGradient() {
     }
 }
 
+function subParagraphGradient() {
+    for (let i = 0; i < 3; i++) {
+        var object = document.getElementsByClassName("smallerFont")[i];
+        if (window.innerHeight - object.getBoundingClientRect().top >= 100) {
+            object.style.opacity = 1;
+            object.style.transform = "translateY(0px)";
+        }
+        else {
+            object.style.opacity = 0;
+            object.style.transform = "translateY(30px)";
+        }
+    }
+}
+
+
 // dropDownIconAppear/Disappear from screen size change
 window.addEventListener("resize", function () {
     var w = window.innerWidth;
@@ -129,7 +144,9 @@ window.addEventListener("resize", function () {
     introParaGradient();
 });
 
+
 // intro paragraph and title fading by on scroll
 window.addEventListener("scroll", function () {
     introParaGradient();
+    subParagraphGradient();
 });
