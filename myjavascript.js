@@ -97,10 +97,17 @@ function dropdown_clicked() {
 }
 
 function headingFontWidthGradient() {
-    let object = document.getElementsByClassName("title")[0];
-    var spac = 0;
-    spac = window.outerHeight - object.getBoundingClientRect().top - object.offsetHeight;
-    object.style.letterSpacing = (spac / 80) ** 2 + "px";
+    if (window.innerWidth > 800) {
+        let object = document.getElementsByClassName("title")[0];
+        var spac = 0;
+        spac = window.outerHeight - object.getBoundingClientRect().top - object.offsetHeight;
+        object.style.letterSpacing = (spac / 80) ** 2 + "px";
+    } else {
+        let object = document.getElementsByClassName("title")[0];
+        var spac = 0;
+        spac = window.outerHeight - object.getBoundingClientRect().top - object.offsetHeight;
+        object.style.letterSpacing = (spac / 200) ** 2 + "px";
+    }
 }
 
 function introParaGradient() {
