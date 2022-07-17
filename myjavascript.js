@@ -14,8 +14,7 @@ disappear();
 
 function titleSize() {
     let navBar = 60;
-    let title = 209;
-    document.getElementsByClassName("title")[0].style.height = window.outerHeight - navBar + "px";
+    document.getElementsByClassName("titleFlex")[0].style.height = window.outerHeight + "px";
 }
 titleSize();
 
@@ -97,8 +96,56 @@ function dropdown_clicked() {
     }
 }
 
-// dropDownIconAppear/Disappear from screen size change
-window.addEventListener("resize", function () {
+function headingFontWidthGradient() {
+    let object = document.getElementsByClassName("title")[0];
+    var spac = 0;
+    spac = window.outerHeight - object.getBoundingClientRect().top - object.offsetHeight;
+    object.style.letterSpacing = (spac / 80) ** 2 + "px";
+}
+
+function introParaGradient() {
+    for (let i = 0; i < 5; i++) {
+        let object = document.getElementsByClassName("introPara")[i];
+        let opac = 1 - Math.abs((object.getBoundingClientRect().top + (object.offsetHeight / 2) - window.outerHeight / 2) / (window.outerHeight / 2));
+        object.style.opacity = opac;
+    }
+}
+
+function subParagraphGradient() {
+    for (let i = 0; i < 5; i++) {
+        var object = document.getElementsByClassName("smallerFont")[i];
+        if (window.innerHeight - object.getBoundingClientRect().top >= 100) {
+            object.style.opacity = 1;
+            object.style.transform = "translateY(0px)";
+        }
+        else {
+            object.style.opacity = 0;
+            object.style.transform = "translateY(30px)";
+        }
+    }
+}
+
+function setOffsetClassHeight() {
+    offset = document.getElementsByClassName("offset")[0];
+    title = document.getElementsByClassName("titleFlex")[0];
+    offset.style.height = title.clientHeight + "px";
+}
+
+function titlePosition() {
+    offset = document.getElementsByClassName("offset")[0];
+    title = document.getElementsByClassName("titleFlex")[0];
+    title.style.transform = "translateY(" + offset.getBoundingClientRect().top / 1.5 + "px)";
+}
+
+function parallaxTitle() {
+    setOffsetClassHeight()
+    titlePosition()
+}
+
+parallaxTitle()
+headingFontWidthGradient()
+
+function close_nav_bar_from_change() {
     var w = window.innerWidth;
     if (w <= 800) {
         //small size
@@ -112,20 +159,23 @@ window.addEventListener("resize", function () {
 
         close_nav_bar();
     }
+}
+
+// dropDownIconAppear/Disappear from screen size change
+window.addEventListener("resize", function () {
+    close_nav_bar_from_change()
     titleSize();
+    introParaGradient();
+    headingFontWidthGradient();
+    parallaxTitle()
 });
+
 
 // intro paragraph and title fading by on scroll
 window.addEventListener("scroll", function () {
-    a = document.getElementsByClassName("title")[0];
-    // a.style.opacity = a.getBoundingClientRect().top;
-    for (let i = 0; i < 5; i++) {
-        let object = document.getElementsByClassName("introPara")[i];
-        let opac = 1 - Math.abs((object.getBoundingClientRect().top + (object.offsetHeight / 2) - window.outerHeight / 2) / (window.outerHeight / 2));
-        // make the paragraph's opacity 1 near the middle and 0 near the edge
-        // {1 - } makes it the opposites
-        // rest: I dont know why its working properly, its working excatly as I planned so like I don't care
-        object.style.opacity = opac;
-        // object.innerHTML = object.offsetHeight;
-    }
+    close_nav_bar_from_change()
+    introParaGradient();
+    subParagraphGradient();
+    headingFontWidthGradient();
+    parallaxTitle()
 });
